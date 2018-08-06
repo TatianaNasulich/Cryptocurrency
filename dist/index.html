@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cryptocurrency prices
+    </title>
+    <link href="css/styles.min.css" rel="stylesheet">
+    <link href="css/base.min.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/slideshow.min.css" rel="stylesheet">
+    <script src="js/script.min.js"></script>
+</head>
+<body>
+<section class="exchanger">
+    <div class="container">
+        <div class="title">
+            <h2 class="title_header">Select currency to exchange:</h2>
+
+            <select class="title_select" name="currency" id="select" onchange="changeCurrensy()" >
+                <option class="title_select_currency" value="USD" selected>USD</option>
+                <option class="title_select_currency" value="EUR">EUR</option>
+                <option class="title_select_currency" value="RUB">RUB</option>
+                <option class="title_select_currency" value="GBP">GBP</option>
+            </select>
+
+        </div>
+        <div class="slideshow">
+            <ul class="slideshow_thumbs">
+                <li class="slideshow_item slideshow_green">
+                    <div class="slideshow_header">Ethereum</div>
+                    <ul class="slideshow_item_price">
+                        <li class="slideshow_item_price_header">
+                            Price:
+                            <div class="slideshow_item_price_amount"></div>
+                        </li>
+                        <li class="slideshow_item_price_persent">
+                            <span class="slideshow_item_price_change">Percent change</span>
+                             <input type="range" class="slideshow_item_price_persent_range" value="1" min="0" max="1" step="1" data-coin="ETH"
+                                    ontouchend="changeDataInCoin('ETH', this.parentElement.parentElement)"
+                                    onclick="changeDataInCoin('ETH', this.parentElement.parentElement)">
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text"> Hour change</span>
+                            <div class="slideshow_item_price_count"></div>
+                        </li>
+                        <li class="slideshow_item_price_change">
+                           <span class="slideshow_item_price_change_text"> Day change</span>
+                            <div class="slideshow_item_price_count slideshow_item_price_change_day"></div>
+                        </li>
+                        <li class="slideshow_item_price_change">
+                           <span class="slideshow_item_price_change_text"> Week change</span>
+                            <div class="slideshow_item_price_count slideshow_item_price_change_week"></div>
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text">Month change</span>
+                            <div class="slideshow_item_price_count slideshow_item_price_change_month"></div>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="slideshow_item slideshow_grey">
+                    <div class="slideshow_header">Litecoin</div>
+                    <ul class="slideshow_item_price">
+                        <li class="slideshow_item_price_header">
+                            Price:
+                            <div class="slideshow_item_price_amount"></div>
+                        </li>
+                        <li class="slideshow_item_price_persent">
+                            <span class="slideshow_item_price_change">Percent change</span>
+                            <input type="range" class="slideshow_item_price_persent_range"  value="1" min="0" max="1" step="1" data-coin="LTC"
+                                   onclick="changeDataInCoin('LTC', this.parentElement.parentElement)"
+                                   ontouchend="changeDataInCoin('LTC', this.parentElement.parentElement)">
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text">Hour change</span>
+                            <div class="slideshow_item_price_count"></div>
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text">Day change</span>
+                            <div class="slideshow_item_price_count slideshow_item_price_change_day"></div>
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text"> Week change</span>
+                            <div class="slideshow_item_price_count slideshow_item_price_change_week"></div>
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text">Month change</span>
+                            <div class="slideshow_item_price_count slideshow_item_price_change_month"></div>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="slideshow_item slideshow_brown">
+                    <div class="slideshow_header">Bitcoin</div>
+
+                    <ul class="slideshow_item_price">
+                        <li class="slideshow_item_price_header">
+                            Price:
+                            <div class="slideshow_item_price_amount"></div>
+                        </li>
+                        <li class="slideshow_item_price_persent">
+                            <span class="slideshow_item_price_change">Percent change</span>
+                            <input type="range"  class="slideshow_item_price_persent_range"  value="0" min="0" max="1" step="1" data-coin="BTC"
+                                   onclick="changeDataInCoin('BTC', this.parentElement.parentElement)"
+                                   ontouchend="changeDataInCoin('BTC', this.parentElement.parentElement)">
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text">Hour</span>
+                            <div class="slideshow_item_price_count"></div>
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text"> Day change</span>
+                            <div class="slideshow_item_price_count slideshow_item_price_change_day"></div>
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text">Week change</span>
+                            <div class="slideshow_item_price_count slideshow_item_price_change_week"></div>
+                        </li>
+                        <li class="slideshow_item_price_change">
+                            <span class="slideshow_item_price_change_text">Month change</span>
+                            <div class="slideshow_item_price_count slideshow_item_price_change_month"></div>
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+</body>
+</html>
