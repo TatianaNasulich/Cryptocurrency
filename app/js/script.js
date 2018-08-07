@@ -5,16 +5,19 @@ window.onload = function () {
 function changeCurrensy() {
     var item = document.querySelectorAll(".slideshow_item_price");
     for (j = 0; j < item.length; j++) {
-        var coin_state = item[j].getElementsByClassName('slideshow_item_price_persent_range')[0];
-        var coin_alias = coin_state.dataset.coin;
+        var coin_alias = item[j].dataset.coin;
         changeDataInCoin(coin_alias, item[j]);
+        console.log(coin_alias)
     }
 }
 
 function changeDataInCoin(coin_alias, parentElement) {
     //get currency
-    var select = document.getElementById("select");
-    var currency_alias = select.options[select.selectedIndex].value;
+    var select = document.getElementsByClassName('custom-select')[1];
+    console.log(select);
+    var currency_alias = select.children[0].innerHTML;
+    console.log(currency_alias);
+
     //prepare URL for request
     var baseUrl = "https://apiv2.bitcoinaverage.com/indices/global/ticker/";
     var params = coin_alias + currency_alias;
@@ -83,3 +86,4 @@ function colorNumbers(number, currency_symbol) {
     else
         return '<span style="color:#c80e24"> ' + number + currency_symbol + '</span>';
 }
+

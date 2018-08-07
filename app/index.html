@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/jquery-3.2.1.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cryptocurrency prices
     </title>
     <link href="css/styles.css" rel="stylesheet">
-    <link href="css/_misc/slideshow.css" rel="stylesheet">
-    <link href="css/_misc/fonts.css" rel="stylesheet">
-    <link href="css/_misc/base.css" rel="stylesheet">
-    <script src="js/script.js"></script>
+    <script src="js/libs.min.js"></script>
 </head>
 <body>
 <section class="exchanger">
     <div class="container">
         <div class="title">
             <h2 class="title_header">Select currency to exchange:</h2>
-
-            <select class="title_select" name="currency" id="select" onchange="changeCurrensy()" >
-                <option class="title_select_currency" value="USD" selected>USD</option>
-                <option class="title_select_currency" value="EUR">EUR</option>
-                <option class="title_select_currency" value="RUB">RUB</option>
-                <option class="title_select_currency" value="GBP">GBP</option>
-            </select>
-
+            <div class="select_currency">
+                <select class="custom-select sources" id="select" onclick="changeCurrensy()" name="sources"  placeholder="USD">
+                    <option value="USD" selected>USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="RUB">RUB</option>
+                    <option value="GBP">GBP</option>
+                </select>
+            </div>
         </div>
         <div class="slideshow">
             <ul class="slideshow_thumbs">
                 <li class="slideshow_item slideshow_green">
                     <div class="slideshow_header">Ethereum</div>
-                    <ul class="slideshow_item_price">
+                    <ul class="slideshow_item_price" data-coin="ETH">
                         <li class="slideshow_item_price_header">
                             Price:
                             <div class="slideshow_item_price_amount"></div>
                         </li>
                         <li class="slideshow_item_price_persent">
                             <span class="slideshow_item_price_change">Percent change</span>
-                             <input type="range" class="slideshow_item_price_persent_range" value="1" min="0" max="1" step="1" data-coin="ETH"
+                             <input type="range" class="slideshow_item_price_persent_range" value="1" min="0" max="1" step="1"
                                     ontouchend="changeDataInCoin('ETH', this.parentElement.parentElement)"
                                     onclick="changeDataInCoin('ETH', this.parentElement.parentElement)">
                         </li>
@@ -61,14 +59,14 @@
                 </li>
                 <li class="slideshow_item slideshow_grey">
                     <div class="slideshow_header">Litecoin</div>
-                    <ul class="slideshow_item_price">
+                    <ul class="slideshow_item_price" data-coin="LTC">
                         <li class="slideshow_item_price_header">
                             Price:
                             <div class="slideshow_item_price_amount"></div>
                         </li>
                         <li class="slideshow_item_price_persent">
                             <span class="slideshow_item_price_change">Percent change</span>
-                            <input type="range" class="slideshow_item_price_persent_range"  value="1" min="0" max="1" step="1" data-coin="LTC"
+                            <input type="range" class="slideshow_item_price_persent_range"  value="1" min="0" max="1" step="1"
                                    onclick="changeDataInCoin('LTC', this.parentElement.parentElement)"
                                    ontouchend="changeDataInCoin('LTC', this.parentElement.parentElement)">
                         </li>
@@ -94,14 +92,14 @@
                 <li class="slideshow_item slideshow_brown">
                     <div class="slideshow_header">Bitcoin</div>
 
-                    <ul class="slideshow_item_price">
+                    <ul class="slideshow_item_price" data-coin="BTC">
                         <li class="slideshow_item_price_header">
                             Price:
                             <div class="slideshow_item_price_amount"></div>
                         </li>
                         <li class="slideshow_item_price_persent">
                             <span class="slideshow_item_price_change">Percent change</span>
-                            <input type="range"  class="slideshow_item_price_persent_range"  value="0" min="0" max="1" step="1" data-coin="BTC"
+                            <input type="range"  class="slideshow_item_price_persent_range"  value="0" min="0" max="1" step="1"
                                    onclick="changeDataInCoin('BTC', this.parentElement.parentElement)"
                                    ontouchend="changeDataInCoin('BTC', this.parentElement.parentElement)">
                         </li>
@@ -128,5 +126,13 @@
         </div>
     </div>
 </section>
+
+<!--<div class="center">-->
+    <!--<select name="sources" id="sources" class="custom-select sources" placeholder="Source Type">-->
+        <!--<option value="profile">Profile</option>-->
+        <!--<option value="word">Word</option>-->
+        <!--<option value="hashtag">Hashtag</option>-->
+    <!--</select>-->
+<!--</div>-->
 </body>
 </html>
