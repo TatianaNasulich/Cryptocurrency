@@ -98,7 +98,6 @@
    right: 0px;
    border-radius: 10px;
    background:-webkit-linear-gradient(left, #c4c4c4 0%,#c4c4c4 50%,#3eb5f1 25%, #3eb5f1 100%);
-   //background:-webkit-linear-gradient(left, #8870FF 0%,#8870FF 50%,#fff 25%, #fff 100%);
  }
  .slideshow_item_price_persent_range::-webkit-slider-thumb {
    -webkit-appearance: none;
@@ -125,7 +124,4 @@
    cursor: pointer;
  }
 
- .slideshow_item_price_persent_range::-ms-fill-lower {
-   background: red;
- }
 

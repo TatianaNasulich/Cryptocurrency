@@ -9,6 +9,9 @@ ul {
   margin: 0;
   padding: 0; }
 
+a {
+  text-decoration: none; }
+
 @font-face {
   font-family: Roboto-Medium;
   src: url(../fonts/Roboto-Medium.ttf); }
@@ -133,14 +136,14 @@ ul {
   background: url("../images/ellips.png");
   cursor: pointer; }
 
-.slideshow_item_price_persent_range::-ms-fill-lower {
-  background: red; }
-
 /** Custom Select **/
 .custom-select-wrapper {
   position: relative;
   display: inline-block;
   user-select: none; }
+
+.custom-select-wrapper select {
+  display: none; }
 
 .custom-select {
   position: relative;
@@ -236,6 +239,12 @@ ul {
   border-bottom: 0;
   border-radius: 0 0 4px 4px; }
 
+.custom-option :hover {
+  background: rgba(255, 255, 255, 0.3); }
+
+.hide_option {
+  display: none; }
+
 body {
   background: #ccc url("../images/field.png") no-repeat center center fixed;
   background-size: cover; }
@@ -285,6 +294,3 @@ body {
       border-radius: 5px;
       padding: 24px 0 20px;
       color: #ffffff; }
-
-.red {
-  color: red; }

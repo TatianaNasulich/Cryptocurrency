@@ -7,16 +7,14 @@ function changeCurrensy() {
     for (j = 0; j < item.length; j++) {
         var coin_alias = item[j].dataset.coin;
         changeDataInCoin(coin_alias, item[j]);
-        console.log(coin_alias)
     }
 }
 
 function changeDataInCoin(coin_alias, parentElement) {
     //get currency
     var select = document.getElementsByClassName('custom-select')[1];
-    console.log(select);
     var currency_alias = select.children[0].innerHTML;
-    console.log(currency_alias);
+
 
     //prepare URL for request
     var baseUrl = "https://apiv2.bitcoinaverage.com/indices/global/ticker/";
